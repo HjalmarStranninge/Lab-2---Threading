@@ -10,17 +10,27 @@ namespace Lab_2___Threading
     internal class Car
     {
         private string _name;
-        private int _speed;
+        private double _speed;
+
+        public double Speed
+        {
+            get { return _speed; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
 
         public Car(string name)
         {
-            name = _name;
+            _name = name;
             _speed = 120;
         }
 
-        public static void SetSpeed(Car car, int speed)
+        public static void ReduceSpeedBy1(Car car)
         {
-            car._speed = speed;
+            car._speed--;
         }
     }
 }
