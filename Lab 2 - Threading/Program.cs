@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             var car1 = new Car("Lightning McQueen");
@@ -9,8 +10,8 @@
 
             bool isFirst = true;
 
-            Thread thread1 = new Thread(() => RaceFunctions.StartRace(car1, isFirst));
-            Thread thread2 = new Thread(() => RaceFunctions.StartRace(car2, isFirst));
+            Thread thread1 = new Thread(() => RaceFunctions.StartRace(car1, ref isFirst));
+            Thread thread2 = new Thread(() => RaceFunctions.StartRace(car2, ref isFirst));
 
             thread1.Start();
             thread2.Start();
